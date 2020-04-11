@@ -20,7 +20,7 @@ class model
 
 	function selectAll()
 	{
-		$query = "select * from barang";
+		$query = "select * from tbl_jadwal";
 		return $this->execute($query);
 	}
 

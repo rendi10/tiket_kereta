@@ -17,10 +17,10 @@ class controller
 		include "view/index.php";
 	}
 
-	function index()
+	function indexAdmin()
 	{
 		$data = $this->model->selectAll();
-		include "view/view.php";
+		include "view/admin/jadwal/index.php";
 	}
 
 	function viewInsert()
