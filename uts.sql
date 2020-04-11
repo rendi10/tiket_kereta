@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Apr 2020 pada 15.00
+-- Waktu pembuatan: 11 Apr 2020 pada 15.33
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mvc`
+-- Database: `uts`
 --
 
 -- --------------------------------------------------------
@@ -31,12 +31,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_jadwal` (
   `id_jadwal` varchar(5) NOT NULL,
   `id_kereta` varchar(5) NOT NULL,
-  `jam_berangkat` date NOT NULL,
-  `jam_tiba` date NOT NULL,
+  `jam_berangkat` varchar(5) NOT NULL,
+  `jam_tiba` varchar(5) NOT NULL,
   `harga` int(255) NOT NULL,
   `dari` varchar(255) NOT NULL,
   `tujuan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_jadwal`
+--
+
+INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_kereta`, `jam_berangkat`, `jam_tiba`, `harga`, `dari`, `tujuan`) VALUES
+('J001', 'K001', '09.00', '14.00', 100, 'Solo', 'Gambir');
 
 -- --------------------------------------------------------
 
@@ -49,6 +56,17 @@ CREATE TABLE `tbl_kereta` (
   `nama_kereta` varchar(255) NOT NULL,
   `kelas` enum('ekonomi','bisnis','eksekutif') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_kereta`
+--
+
+INSERT INTO `tbl_kereta` (`id_kereta`, `nama_kereta`, `kelas`) VALUES
+('K001', 'Argo Lawu', 'eksekutif'),
+('K002', 'Senja Utama Solo', 'bisnis'),
+('K003', 'Joglokerto Ekspres', 'eksekutif'),
+('K004', 'Gajayana	', 'ekonomi'),
+('K005', 'Turangga', 'eksekutif');
 
 -- --------------------------------------------------------
 
@@ -86,10 +104,18 @@ CREATE TABLE `tbl_reservasi` (
 
 CREATE TABLE `tbl_user` (
   `id_user` varchar(5) NOT NULL,
+  `username` varchar(10) NOT NULL,
   `level` enum('admin','pengunjung') NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `level`, `email`, `password`) VALUES
+('1', 'rendi', 'admin', 'rendijaka@student.uns.ac.id', '1234');
 
 --
 -- Indexes for dumped tables
