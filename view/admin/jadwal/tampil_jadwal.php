@@ -1,6 +1,7 @@
 <?php
 include '../template/header.php';
 include '../template/sidebar.php';
+
 ?>
 <div class="bs-component">
     <div class="panel-heading">
@@ -19,7 +20,7 @@ include '../template/sidebar.php';
             </tr>
         </thead>
         <?php
-
+        
         while ($row = $this->model->fetch($data)) {
             echo "
 

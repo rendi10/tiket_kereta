@@ -24,10 +24,10 @@ if (isset($_POST['submit'])) {
             header("location:view/admin/index.php");
 
             // cek jika user login sebagai pegawai
-        } else if ($data['level'] == "pegawai") {
+        } else if ($data['level'] == "pengunjung") {
             // buat session login dan username
             $_SESSION['username'] = $username;
-            $_SESSION['level'] = "pegawai";
+            $_SESSION['level'] = "pengunjung";
             // alihkan ke halaman dashboard pegawai
             header("location:view/penumpang/index.php");
         } else {
