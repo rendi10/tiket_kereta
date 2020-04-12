@@ -66,25 +66,25 @@ class model
 		return $this->execute($query);
 
 	}
-	function idUser(){
-		$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
-          $mydata = $this->execute($query);
-          $row= mysqli_fetch_array($mydata);
-          // ID OTOMATIS//***************************************************
-          $awal=substr($row['id_user'],3,4)+1;
-          if($awal<10){
-            $auto='ID00'.$awal;
-          }elseif($awal > 9 && $awal <=99){
-            $auto='ID0'.$awal;
-          }else{
-            $auto='ID'.$awal;
-		  }
+	// function idUser(){
+	// 	$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
+    //       $mydata = $this->execute($query);
+    //       $row= mysqli_fetch_array($mydata);
+    //       // ID OTOMATIS//***************************************************
+    //       $awal=substr($row['id_user'],3,4)+1;
+    //       if($awal<10){
+    //         $auto='ID00'.$awal;
+    //       }elseif($awal > 9 && $awal <=99){
+    //         $auto='ID0'.$awal;
+    //       }else{
+    //         $auto='ID'.$awal;
+	// 	  }
 		  
-		  return $auto;
+	// 	  return $auto;
 
-	}
+	// }
 	function insertUser($username, $email, $password){
-		$id_user = $this->idUser();
+		$id_user = $this->idPenumpang();
 		$level = 'pengunjung';
 		$query = "insert into tbl_user values ('$id_user', '$username', '$level', '$email', '$password')";
 		return $this->execute($query);
