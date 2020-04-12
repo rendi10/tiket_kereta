@@ -20,14 +20,14 @@ class controller
 	function indexAdmin()
 	{
 		$data = $this->model->selectAll();
-		include "view/admin/jadwal/index.php";
 	}
 
 	function viewInsert()
 	{
 		include "view/addview.php";
 	}
-	function insertPenumpang(){
+	function insertPenumpang()
+	{
 		$nama_penumpang = $_POST['nama_penumpang'];
 		$jk = $_POST['jk'];
 		$ttl = $_POST['ttl'];
@@ -35,9 +35,9 @@ class controller
 		$alamat = $_POST['alamat'];
 		$insert = $this->model->insertPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
 		header("location: daftar/index.php");
-
 	}
-	function insertUser(){
+	function insertUser()
+	{
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -57,6 +57,7 @@ class controller
 		header("location:index.php");
 	}
 
+	
 	function viewUpdate($kode_barang)
 	{
 		$data = $this->model->selectBarang($kode_barang);

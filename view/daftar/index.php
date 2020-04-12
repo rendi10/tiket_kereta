@@ -36,6 +36,12 @@
                                 <form method="POST" action="index.php" id="form-register2">
                                     <div class="panel-body p25">
                                     <div class="section-divider mt10 mb40">
+                                        <span>Already have account? <a href="../../index.php" class="theme-link">login</a> </span> 
+                                        
+                                    </div>
+                                    <!-- .section-divider -->
+                                    <div class="panel-body p25">
+                                    <div class="section-divider mt10 mb40">
                                         <span>Set up your account</span>
                                     </div>
                                     <!-- .section-divider -->
