@@ -1,6 +1,9 @@
 <?php
 include '../template/header.php';
 include '../template/sidebar.php';
+include '../../../controller/jadwalControl.php'
+
+
 
 ?>
 <div class="bs-component">
@@ -20,8 +23,9 @@ include '../template/sidebar.php';
             </tr>
         </thead>
         <?php
-        
-        while ($row = $this->model->fetch($data)) {
+        $main = new jadwalControl();
+
+        while ($row = $main->indexAdmin()) {
             echo "
 
 																								<tr>
