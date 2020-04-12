@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar-right">
          
             <li class="dropdown-footer">
-              <a href="#" class="">
+              <a href="../logout.php" class="">
               <span class="fa fa-power-off pr5"></span> Logout </a>
             </li>
           </ul>

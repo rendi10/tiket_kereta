@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
                     <!-- Registration Links -->
                     <div class="login-links">
                         <p>Belum punya akun?
-                            <a href="" title="Sign In">Daftar disini!</a>
+                            <a href="daftar/index.php" title="Sign In">Daftar disini!</a>
                         </p>
                     </div>
                     <!-- Registration Links(alt) -->
