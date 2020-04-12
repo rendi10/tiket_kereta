@@ -1,6 +1,6 @@
 <?php
 
-include "../model/model.php";
+include "../../model/model.php";
 class regisControl
 {
 
@@ -17,16 +17,16 @@ class regisControl
 		$no_hp = $_POST['no_hp'];
 		$alamat = $_POST['alamat'];
 		$insert = $this->model->insertPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
-		header("location: daftar/index.php");
+		//header("location: ../../../index.php");
 
 	}
 	function insertUser(){
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$insert = $this->model->insertUser($eusername, $email, $password);
+		$insert = $this->model->insertUser($username, $email, $password);
 
-		header("location: daftar/index.php");
+		//header("location: ../../../index.php");
 	}
 }
 

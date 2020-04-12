@@ -30,7 +30,7 @@ class model
 		return $this->execute($query);
 	}
 	function idPenumpang(){
-		$cek_dulu = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";
+		$query = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";
           $mydata = $this->execute($query);
           $row= mysqli_fetch_array($mydata);
           // ID OTOMATIS//***************************************************
@@ -53,7 +53,7 @@ class model
 
 	}
 	function idUser(){
-		$cek_dulu = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
+		$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
           $mydata = $this->execute($query);
           $row= mysqli_fetch_array($mydata);
           // ID OTOMATIS//***************************************************

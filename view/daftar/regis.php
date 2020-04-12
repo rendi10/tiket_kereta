@@ -33,7 +33,7 @@
                                 </div>
                                 <!-- end .form-header section -->
 
-                                <form method="post" action="/" id="form-register2">
+                                <form method="POST" action="index.php" id="form-register2">
                                     <div class="panel-body p25">
                                     <div class="section-divider mt10 mb40">
                                         <span>Set up your account</span>
@@ -63,7 +63,7 @@
                                     <!-- end section -->
                                     <div class="section">
                                         <label for="password" class="field prepend-icon">
-                                        <input type="text" name="password" id="password" class="gui-input" placeholder="Create a password">
+                                        <input type="password" name="password" id="password" class="gui-input" placeholder="Create a password">
                                         <label for="password" class="field-icon">
                                             <i class="fa fa-lock"></i>
                                         </label>
@@ -71,9 +71,9 @@
                                     </div>
                                     <div class="section">
                                         
-                                        <label for="name" class="field prepend-icon">
-                                            <input type="text" name="name" id="name" class="gui-input" placeholder="Write your full name">
-                                            <label for="name" class="field-icon">
+                                        <label for="nama_penumpang" class="field prepend-icon">
+                                            <input type="text" name="nama_penumpang" id="nama_penumpang" class="gui-input" placeholder="Write your full name">
+                                            <label for="nama_penumpang" class="field-icon">
                                             <i class="fa fa-user"></i>
                                             </label>
                                         </label>
@@ -83,7 +83,7 @@
 
                                     <div class="section">
                                         <label class="field select">
-                                        <select id="gender" name="gender">
+                                        <select id="jk" name="jk">
                                             <option value="laki-laki">Laki - laki</option>
                                             <option value="perempuan">Perempuan</option>
                                         </select>
@@ -152,6 +152,23 @@
     </div>
 </body>
 <?php
+
+include '../../controller/regisControl.php';
+if(isset($_POST['submit'])){
+    $main = new regisControl();
+    $main->insertUser();
+    $main->insertPenumpang();
+
+    echo '<script language="javascript">
+                  alert ("Berhasil");
+                  window.location="index.php";
+                  </script>';
+
+    //header("location: ../../../index.php");
+
+
+    
+}
 
 ?>
 </html>
