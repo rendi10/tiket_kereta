@@ -24,9 +24,9 @@ class model
 		return $this->execute($query);
 	}
 
-	function selectBarang($kode_barang)
+	function selectJadwal($id_jadwal)
 	{
-		$query = "select * from barang where kode_barang='$kode_barang'";
+		$query = "select * from barang where id_jadwal='$id_jadwal'";
 		return $this->execute($query);
 	}
 
