@@ -131,7 +131,7 @@
                                         <label class="option block mt10">
                                         <input type="checkbox" name="terms">
                                         <span class="checkbox mr10"></span>I agree to the
-                                        <a href="#" class="theme-link"> terms of use. </a>
+                                        <a href="index.php" class="theme-link"> terms of use. </a>
                                         </label>
                                     </div>
                                     <!-- end section -->
@@ -139,7 +139,7 @@
                                     </div>
                                     <!-- end .form-body section -->
                                     <div class="panel-footer">
-                                    <button type="submit" class="button btn-primary">I Accept - Create Account</button>
+                                    <button type="submit" href="index.php" name= "submit" class="button btn-primary">Create Account</button>
                                     </div>
                                     <!-- end .form-footer section -->
                                 </form>

@@ -1,12 +1,13 @@
 <?php
-include '../controller/control.php';
+
 include 'regis.php';
+include '../../controller/regisControl.php';
 if(isset($_POST['submit'])){
-    $main = new controller();
+    $main = new regisControl();
     $main->insertUser();
     $main->insertPenumpang();
 
-    //header("location: ../../index.php");
+    header("location: ../../../index.php");
 
 
     
