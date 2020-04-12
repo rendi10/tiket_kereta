@@ -34,7 +34,7 @@
     <div id="main">
     <header class="navbar navbar-fixed-top">
       <div class="navbar-branding">
-        <a class="navbar-brand" href="dashboard.html">
+        <a class="navbar-brand" href="index.php">
           <b>Penumpang</b>Designs
         </a>
         <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
@@ -67,11 +67,7 @@
                             <span class="glyphicon glyphicon-home"></span>
                             <span class="sidebar-title">Dashboard</span>
                         </a>
-                        <a href="">
-                            <span class="glyphicon glyphicon-home"></span>
-                            <span class="sidebar-title">Profil</span>
-                        </a>
-
+                       
                     </li>
                 </ul>
             </div>
@@ -82,6 +78,7 @@
         <section id="content_wrapper">
             <!-- Begin: Content -->
             <section id="content" class="animated fadeIn">
+            Welcome
             </section>
         </section>
     </div>

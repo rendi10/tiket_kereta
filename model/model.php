@@ -21,7 +21,8 @@ class model
 	function selectAll()
 	{
 		$query = "select * from tbl_jadwal";
-		return $this->execute($query);
+		$cek = $this->execute($query);
+		return $this->fetch($cek);
 	}
 
 	function selectBarang($kode_barang)
@@ -29,6 +30,19 @@ class model
 		$query = "select * from barang where kode_barang='$kode_barang'";
 		return $this->execute($query);
 	}
+
+	function selectProfil($username){
+		
+		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
+        $cek = $this->execute($query);
+        $rows= fetch($cek);
+        $row1=$rows['id_user']; //mengambil id dari sesi
+        $pilih= "SELECT * FROM tbl_penumpang where id_penumpang='$row1'";
+        return $this->execute($pilih);
+
+
+	}
+	
 	function idPenumpang(){
 		$query = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";
           $mydata = $this->execute($query);
@@ -52,41 +66,30 @@ class model
 		return $this->execute($query);
 
 	}
-	function idUser(){
-		$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
-          $mydata = $this->execute($query);
-          $row= mysqli_fetch_array($mydata);
-          // ID OTOMATIS//***************************************************
-          $awal=substr($row['id_user'],3,4)+1;
-          if($awal<10){
-            $auto='ID00'.$awal;
-          }elseif($awal > 9 && $awal <=99){
-            $auto='ID0'.$awal;
-          }else{
-            $auto='ID'.$awal;
-		  }
+	// function idUser(){
+	// 	$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
+    //       $mydata = $this->execute($query);
+    //       $row= mysqli_fetch_array($mydata);
+    //       // ID OTOMATIS//***************************************************
+    //       $awal=substr($row['id_user'],3,4)+1;
+    //       if($awal<10){
+    //         $auto='ID00'.$awal;
+    //       }elseif($awal > 9 && $awal <=99){
+    //         $auto='ID0'.$awal;
+    //       }else{
+    //         $auto='ID'.$awal;
+	// 	  }
 		  
-		  return $auto;
+	// 	  return $auto;
 
-	}
+	// }
 	function insertUser($username, $email, $password){
-		$id_user = $this->idUser();
+		$id_user = $this->idPenumpang();
 		$level = 'pengunjung';
 		$query = "insert into tbl_user values ('$id_user', '$username', '$level', '$email', '$password')";
 		return $this->execute($query);
 
 
-	}
-	function insertBarang($kode_barang, $nama_barang, $harga_jual, $harga_beli, $stok)
-	{
-		$query = "insert into barang values ('$kode_barang', '$nama_barang', '$harga_jual', '$harga_beli', '$stok')";
-		return $this->execute($query);
-	}
-
-	function updateBarang($kode_barang, $nama_barang, $harga_jual, $harga_beli, $stok)
-	{
-		$query = "update barang set kode_barang='$kode_barang', nama_barang='$nama_barang', harga_jual='$harga_jual', harga_beli='$harga_beli', stock='$stok' where kode_barang='$kode_barang'";
-		return $this->execute($query);
 	}
 
 	function hapus($kode_barang)
