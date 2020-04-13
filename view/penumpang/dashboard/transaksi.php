@@ -5,6 +5,8 @@ include '../template/sidebar.php';
 
 
 ?>
+                    <section id="content_wrapper">
+                        <section id="content" class="animated fadeIn">
 
                             <div class="admin-form theme-danger tab-pane mw800" id="register2" role="tabpanel">
                                 <div class="panel panel-danger heading-border">

@@ -44,6 +44,5 @@
         <!-- End: Sidebar Left -->
 
         <!-- Start: Content-Wrapper -->
-        <section id="content_wrapper">
-            <!-- Begin: Content -->
-            <section id="content" class="animated fadeIn">
+        
+           

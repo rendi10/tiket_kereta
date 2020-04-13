@@ -21,18 +21,29 @@ class transaksiControl
         include "jadwal.php";
 
     }
-    function cek (){
-        $username = 'lalacans';
-        return $this->model->selectIdPenumpang($username);
-
-    }
+   
 
     function insert(){
         $id_jadwal = $_POST['id_jadwal'];
         $username = $_POST['username'];
         $id_penumpang = $this->model->selectIdPenumpang($username);
-        $tanggal_berangkat = $_POST['tanggal_berangkat'];
+        
         $insert = $this->model->insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat);
+    }
+    function insertOthers(){
+
+        $id_jadwal = $_POST['id_jadwal'];
+        $tanggal_berangkat = $_POST['tanggal_berangkat'];
+        $others = $this->model->otherTransaksi();
+
+    }
+    function insertOther(){
+        $nama_penumpang = $_POST['nama_penumpang'];
+		$jk = $_POST['jk'];
+		$ttl = $_POST['ttl'];
+		$no_hp = $_POST['no_hp'];
+		$alamat = $_POST['alamat'];
+        $other = $this->model->insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
     }
 }
 

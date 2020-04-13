@@ -5,7 +5,10 @@ include '../template/sidebar.php';
 
 
 ?>
-            <section id="content" class="animated fadeIn">
+	<section id="content_wrapper">
+        <section id="content" class="animated fadeIn">
+			<div class="page-heading">
+
             <table class="table table-striped table-hover">
 																<thead>
 																		<tr>
@@ -50,6 +53,7 @@ include '../template/sidebar.php';
 																
 
 														</table>
+						</div>
           
 <?php
 include '../template/footer.php';

@@ -61,6 +61,36 @@ class model
 		$on = $this->execute($query);
 		return $on;
 	}
+	function otherPenumpang(){
+		$query = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";
+		$mydata = $this->execute($query);
+		$row = mysqli_fetch_array($mydata);
+		// ID OTOMATIS//***************************************************
+		$awal = substr($row['id_penumpang'], 3, 4) + 1;
+		if ($awal < 10) {
+			$auto = 'IO00' . $awal;
+		} elseif ($awal > 9 && $awal <= 99) {
+			$auto = 'IO0' . $awal;
+		} else {
+			$auto = 'IO' . $awal;
+		}
+
+		return $auto;
+
+	}
+	function insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat){
+		$id_penumpang = $this->otherPenumpang();
+		$query = "insert into tbl_penumpang values ('$id_penumpang', '$nama_penumpang', '$jk', '$ttl', '$no_hp', '$alamat')";
+		return $this->execute($query);
+
+	}
+	function otherTransaksi(){
+		$id_penumpang = $this->otherPenumpang();
+		$id_reservasi = $this->idReservasi();
+		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
+		return $this->execute($query);
+
+	}
 	function selectIdPenumpang($username)
 	{
 		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
