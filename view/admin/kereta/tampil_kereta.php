@@ -3,49 +3,50 @@ include '../template/header.php';
 include '../template/sidebar.php';
 
 ?>
-<div class="bs-component">
-    <div class="panel-heading">
-        <h3 class="panel-title">Kereta</h3>
-    </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Id Kereta</th>
-                <th>Nama Kereta</th>
-                <th>Kelas</th>
-            </tr>
-        </thead>
+<section id="content_wrapper">
+    <section id="content" class="animated fadeIn">
+        <div class="panel">
+
+            <!-- <div class="panel-heading mt10">
+                <span class="panel-title">Jadwal Keberangkatan</span>
+                <span class="fa fa-table"></span>
+            </div> -->
+            <div class="panel-body">
+                <span class="panel-title">
+                    <b>Data Kereta<b>
+                </span> <span class="fa fa-table">
+                </span>
+                <table class="table table-bordered mt15">
+                    <thead>
+                        <tr>
+                            <th>Id Kereta</th>
+                            <th>Kereta</th>
+                            <th>Kelas</th>
+                        </tr>
+                    </thead>
+                    <?php while ($row = $this->model->fetch($data)) { ?>
+                        <tr>
+                            <td><?php print $row['id_kereta']; ?></td>
+                            <td><?php print $row['nama_kereta']; ?></td>
+                            <td><?php print $row['kelas']; ?></td>
+                            <td>
+                                <div class=''>
+                                    <a href='index.php?u=<?php echo $row['id_kereta']; ?>' title='Update' style='margin-right:5px' class='btn btn-success btn-sm'>
+                                        <i class='glyphicon glyphicon-edit'></i>
+                                    </a>
+                                    <a href='index.php?d=<?php echo $row['id_kereta']; ?>' title='Delete' style='margin-right:5px' class='btn btn-danger btn-sm'>
+                                        <i class='glyphicon glyphicon-trash'></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php  } ?>
+
+                    </tbody>
+                </table>
+                <a href='index.php?t' title='Insert' style='margin-right:5px' class='btn btn-primary btn-sm mt25'>Tambah</a>
+            </div>
+        </div>
         <?php
-        
-        while ($row = $this->model->fetch($data)) {
-            echo "
-
-                                                                                                <tr>
-                                                                                                        <td>$row[0]</td>
-                                                                                                        <td>$row[1]</td>
-                                                                                                        <td>$row[2]</td>
-                                                                                                        <td>$row[3]</td>
-                                                                                                        <td>$row[4]</td>
-                                                                                                        <td>$row[5]</td>
-                                                                                                        <td>$row[6]</td>
-                                                                                                        <td>
-                                                                                                                <div class=''>
-                                                                                                                        <a href='index.php?u=$row[0]' data-toggle='tooltip' data-placement='top' title='Update' style='margin-right:5px' class='btn btn-success btn-sm open_modal'>
-                                                                                                                                <i class='glyphicon glyphicon-edit'></i>
-                                                                                                                        </a>
-                                                                                                                        <a href='index.php?d=$row[0]' onClick=\"return confirm('Apakah Anda Yakin Menghapus Data Ini?')\" data-toggle='tooltip' data-placement='top' title='Delete' style='margin-right:5px' class='btn btn-danger btn-sm'>
-                                                                                                                                <i class='glyphicon glyphicon-trash'></i>
-                                                                                                                        </a>
-                                                                                                                </div>
-                                                                                                        </td>
-                                                                                                </tr>
-
-                                                                                         ";
-        }
-
+        include '../template/footer.php';
         ?>
-    </table>
-</div>
-<?php
-include '../template/footer.php';
-?>

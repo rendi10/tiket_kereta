@@ -48,14 +48,24 @@
                     <li class="sidebar-label pt20">Menu</li>
                     <li>
                         <a href="">
-                            <span class="glyphicon glyphicon-home"></span>
-                            <span class="sidebar-title">Transaksi</span>
+                            <span class="glyphicon glyphicon-list-alt"></span>
+                            <span class="sidebar-title">Reservasi</span>
                         </a>
+                    </li>
+                    <li>
                         <a href="jadwal/index.php">
-                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="glyphicon glyphicon-time"></span>
                             <span class="sidebar-title">Jadwal</span>
                         </a>
-                        <a href="kereta/tampil_kereta.php">
+                    </li>
+                    <li>
+                        <a href="">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="sidebar-title">Penumpang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="kereta/index.php">
                             <span class="glyphicon glyphicon-bed"></span>
                             <span class="sidebar-title">Kereta</span>
                         </a>

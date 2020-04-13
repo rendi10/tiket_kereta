@@ -52,6 +52,32 @@ class model
 	}
 
 
+	function updateJadwalModel($id_jadwal, $id_kereta, $jam_berangkat, $jam_tiba, $harga, $dari, $tujuan)
+	{
+		$query = "update tbl_jadwal set id_jadwal='$id_jadwal' id_kereta='$id_kereta', jam_berangkat='$jam_berangkat', jam_tiba='$jam_tiba', harga='$harga', dari='$dari', tujuan='$tujuan' where id_jadwal='$id_jadwal'";
+		return $this->execute($query);
+	}
+
+	function selectJadwalUpdate($id_jadwal)
+	{
+		$query = "select * from tbl_jadwal where id_jadwal='$id_jadwal'";
+		return $this->execute($query);
+	}
+
+	function hapusJadwalModel($id_jadwal)
+	{
+		$query = "delete from tbl_jadwal where id_jadwal='$id_jadwal'";
+		return $this->execute($query);
+	}
+
+	//MODEL KERETAAAAAA
+
+	function selectAllKereta()
+	{
+		$query = "select * from tbl_kereta";
+		return $this->execute($query);
+	}
+
 
 
 	//MODEL PENUMPANGGGGGGG
