@@ -31,9 +31,6 @@
                 </ul>
             </div>
         </aside>
-        <!-- End: Sidebar Left -->
-
-        <!-- Start: Content-Wrapper -->
+        <!-- Begin: Content -->
         <section id="content_wrapper">
-            <!-- Begin: Content -->
-            <section id="content" class="animated fadeIn">
+            <section id="content" class="table-layout">

@@ -1,32 +1,38 @@
 <?php
 include '../template/header.php';
 include '../template/sidebar.php';
-include '../../../controller/jadwalControl.php'
+include '../../../controller/jadwalControl.php';
 
 
 
 ?>
-<div class="bs-component">
+<div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-title">Jadwal Keberangkatan</h3>
+        <span class="panel-title">Jadwal Keberangkatan</span>
+        <span class="fa fa-table"></span>
     </div>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Id Jadwal</th>
-                <th>Id Kereta</th>
-                <th>Jam Berangkat</th>
-                <th>Jam Tiba</th>
-                <th>Harga</th>
-                <th>Dari</th>
-                <th>Tujuan</th>
-            </tr>
-        </thead>
-        <?php
-        $main = new jadwalControl();
+    <div class="panel-body">
+        <div class="panel-body pn">
+            <div class="bs-component">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id Jadwal</th>
+                            <th>Id Kereta</th>
+                            <th>Jam Berangkat</th>
+                            <th>Jam Tiba</th>
+                            <th>Harga</th>
+                            <th>Dari</th>
+                            <th>Tujuan</th>
+                            <th>aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $main = new jadwalControl();
 
-        while ($row = $main->indexAdmin()) {
-            echo "
+                        while ($row = $main->indexAdmin()) {
+                            echo "
 
 																								<tr>
 																										<td>$row[0]</td>
@@ -46,13 +52,17 @@ include '../../../controller/jadwalControl.php'
 																														</a>
 																												</div>
 																										</td>
-																								</tr>
+                                                                                                </tr>                                         
 
 																						 ";
-        }
+                        }
 
-        ?>
-    </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <?php
 include '../template/footer.php';

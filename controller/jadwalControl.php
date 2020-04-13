@@ -2,6 +2,8 @@
 include '../../../model/model.php';
 
 class jadwalControl
+
+
 {
     public $model;
 
@@ -13,5 +15,6 @@ class jadwalControl
     function indexAdmin()
     {
         $data = $this->model->selectAll();
+        // include 'view/admin/jadwal/tampil_jadwal.php';
     }
 }
