@@ -29,12 +29,38 @@ class model
 		$on = $this->execute($query);
 		return $on;
 	}
-	function selectBarang($kode_barang)
+	function selectIdPenumpang($username)
 	{
-		$query = "select * from barang where kode_barang='$kode_barang'";
+		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
+		$id_penumpang = $this->execute($query);
+		$rows = $this->fetch($id_penumpang);
+		return $rows['id_user'];
+	}
+
+	function insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat){
+		
+		$id_reservasi = $this->idReservasi();
+		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
 		return $this->execute($query);
 	}
 
+	function idReservasi(){
+		$query = "SELECT * FROM tbl_reservasi ORDER BY id_reservasi DESC LIMIT 0,1";
+		$mydata = $this->execute($query);
+		$row = mysqli_fetch_array($mydata);
+		// ID OTOMATIS//***************************************************
+		$awal = substr($row['id_reservasi'], 3, 4) + 1;
+		if ($awal < 10) {
+			$auto = 'IR00' . $awal;
+		} elseif ($awal > 9 && $awal <= 99) {
+			$auto = 'IR0' . $awal;
+		} else {
+			$auto = 'IR' . $awal;
+		}
+
+		return $auto;
+
+	}
 	function selectProfil($username)
 	{
 
