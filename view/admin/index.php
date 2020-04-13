@@ -35,7 +35,7 @@
         <header class="navbar navbar-fixed-top">
             <div class="navbar-branding dark">
                 <a class="navbar-brand" href="dashboard.html">
-                    <b>Admin</b>Designs
+                    <b>Admin</b>
                 </a>
                 <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
             </div>
@@ -55,7 +55,7 @@
                             <span class="glyphicon glyphicon-calendar"></span>
                             <span class="sidebar-title">Jadwal</span>
                         </a>
-                        <a href="../README/index.html">
+                        <a href="kereta/tampil_kereta.php">
                             <span class="glyphicon glyphicon-bed"></span>
                             <span class="sidebar-title">Kereta</span>
                         </a>
