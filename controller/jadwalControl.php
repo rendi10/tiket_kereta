@@ -2,6 +2,8 @@
 include '../../../model/model.php';
 
 class jadwalControl
+
+
 {
     public $model;
 

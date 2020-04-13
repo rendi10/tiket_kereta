@@ -3,9 +3,10 @@ include '../template/header.php';
 include '../template/sidebar.php';
 
 ?>
-<div class="bs-component">
+<div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-title">Jadwal Keberangkatan</h3>
+        <span class="panel-title">Jadwal Keberangkatan</span>
+        <span class="fa fa-table"></span>
     </div>
     <table class="table table-bordered">
         <thead>
@@ -42,13 +43,17 @@ include '../template/sidebar.php';
 																														</a>
 																												</div>
 																										</td>
-																								</tr>
+                                                                                                </tr>                                         
 
 																						 ";
-        }
+                        }
 
-        ?>
-    </table>
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 <?php
 include '../template/footer.php';
