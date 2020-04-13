@@ -61,7 +61,8 @@ class model
 		$on = $this->execute($query);
 		return $on;
 	}
-	function otherPenumpang(){
+	function otherPenumpang()
+	{
 		$query = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";
 		$mydata = $this->execute($query);
 		$row = mysqli_fetch_array($mydata);
@@ -76,20 +77,19 @@ class model
 		}
 
 		return $auto;
-
 	}
-	function insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat){
+	function insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat)
+	{
 		$id_penumpang = $this->otherPenumpang();
 		$query = "insert into tbl_penumpang values ('$id_penumpang', '$nama_penumpang', '$jk', '$ttl', '$no_hp', '$alamat')";
 		return $this->execute($query);
-
 	}
-	function otherTransaksi(){
+	function otherTransaksi($id_jadwal, $tanggal_berangkat)
+	{
 		$id_penumpang = $this->otherPenumpang();
 		$id_reservasi = $this->idReservasi();
 		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
 		return $this->execute($query);
-
 	}
 	function selectIdPenumpang($username)
 	{
@@ -124,16 +124,16 @@ class model
 
 		return $auto;
 	}
-	function selectProfil($username)
-	{
+	// function selectProfil($username)
+	// {
 
-		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
-		$cek = $this->execute($query);
-		$rows = fetch($cek);
-		$row1 = $rows['id_user']; //mengambil id dari sesi
-		$pilih = "SELECT * FROM tbl_penumpang where id_penumpang='$row1'";
-		return $this->execute($pilih);
-	}
+	// 	$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
+	// 	$cek = $this->execute($query);
+	// 	$rows = fetch($cek);
+	// 	$row1 = $rows['id_user']; //mengambil id dari sesi
+	// 	$pilih = "SELECT * FROM tbl_penumpang where id_penumpang='$row1'";
+	// 	return $this->execute($pilih);
+	// }
 
 	function idPenumpang()
 	{
