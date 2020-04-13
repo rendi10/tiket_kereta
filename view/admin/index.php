@@ -51,7 +51,7 @@
                             <span class="glyphicon glyphicon-home"></span>
                             <span class="sidebar-title">Transaksi</span>
                         </a>
-                        <a href="jadwal/tampil_jadwal.php">
+                        <a href="jadwal/index.php">
                             <span class="glyphicon glyphicon-calendar"></span>
                             <span class="sidebar-title">Jadwal</span>
                         </a>
