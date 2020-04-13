@@ -20,11 +20,13 @@ class model
 
 	function selectAll()
 	{
-		$query = "select * from tbl_jadwal";
-		return $this->execute($query);
+		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
+		$on = $this->execute($query);
+		return $on;
 	}
 
-	function selectJadwal(){
+	function selectJadwal()
+	{
 		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
 		$on = $this->execute($query);
 		return $on;
