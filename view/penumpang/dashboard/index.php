@@ -7,33 +7,24 @@ include '../template/sidebar.php';
 ?>
 
            <?php
-           include '../../../controller/transaksiControl.php';
-           $main = new transaksiControl();
-           $main->cek();
-           
-           
-              if(isset($_GET['prib'])){
-                  include 'transaksi.php';
-                      
-                    if(isset($_POST['kirim'])){
-                        $main->insert();
-                        echo '<script language="javascript">
+            include '../../../controller/transaksiControl.php';
+            $main = new transaksiControl();
+
+            if (isset($_GET['prib'])) {
+                include 'transaksi.php';
+
+                if (isset($_POST['kirim'])) {
+                    $main->insert();
+                    echo '<script language="javascript">
                         alert ("Berhasil");
                         window.location="index.php";
                         </script>';
+                } else {
+                }
+            } else {
+                $main->viewSelect();
 
-
-                    }else {
-
-                    }
-
-                  
-             
-                
-                }else{
-                        $main->viewSelect();
-                        
-                        echo '<section id="content" class="animated fadeIn">
+                echo '<section id="content" class="animated fadeIn">
                             <table cellspacing="0" cellpadding="0" width="600" class="w320" >
                             
                             <tr>
@@ -50,10 +41,10 @@ include '../template/sidebar.php';
                         </tr>
                             </table>
                         </section>';
-                }
-           
-           
-           ?>
+            }
+
+
+            ?>
          
            
      

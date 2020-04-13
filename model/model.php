@@ -26,6 +26,33 @@ class model
 		return $on;
 	}
 
+	function idJadwal()
+	{
+		$query = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC LIMIT 0,1";
+		$mydata = $this->execute($query);
+		$row = mysqli_fetch_array($mydata);
+		// ID OTOMATIS//***************************************************
+		$awal = substr($row['id_jadwal'], 3, 4) + 1;
+		if ($awal < 10) {
+			$auto = 'J00' . $awal;
+		} elseif ($awal > 9 && $awal <= 99) {
+			$auto = 'J0' . $awal;
+		} else {
+			$auto = 'J' . $awal;
+		}
+
+		return $auto;
+	}
+
+	function insertJadwal($id_kereta, $jam_berangkat, $jam_tiba, $harga, $dari, $tujuan)
+	{
+		$id_jadwal = $this->idJadwal();
+		$query = "insert into tbl_jadwal values ('$id_jadwal','$id_kereta', '$jam_berangkat', '$jam_tiba', '$harga', '$dari', '$tujuan')";
+		return $this->execute($query);
+	}
+
+
+
 
 	//MODEL PENUMPANGGGGGGG
 	function selectJadwal()

@@ -12,6 +12,8 @@ class jadwalControl
         $this->model = new model();
     }
 
+    //CONTROLLER ADMIN DISINI!
+
     function indexAdmin()
     {
         $data = $this->model->selectAll();
@@ -23,17 +25,18 @@ class jadwalControl
         include "tambah_jadwal.php";
     }
 
-    // function insert()
-    // {
-    //     $kode_barang = $_POST['kode_barang'];
-    //     $nama_barang = $_POST['nama_barang'];
-    //     $harga_jual = $_POST['harga_jual'];
-    //     $harga_beli = $_POST['harga_beli'];
-    //     $stok = $_POST['stok'];
+    function insertJadwal()
+    {
+        $id_kereta = $_POST['id_kereta'];
+        $jam_berangkat = $_POST['jam_berangkat'];
+        $jam_tiba = $_POST['jam_tiba'];
+        $harga = $_POST['harga'];
+        $dari = $_POST['dari'];
+        $tujuan = $_POST['tujuan'];
+        $insert = $this->model->insertJadwal($id_kereta, $jam_berangkat, $jam_tiba, $harga, $dari, $tujuan);
+    }
 
-    //     $insert = $this->model->insertJadwal($kode_barang, $nama_barang, $harga_jual, $harga_beli, $stok);
-    //     header("location:index.php");
-    // }
+    //CONTROLLER PENUMPANG 
 
     function viewSelect()
     {

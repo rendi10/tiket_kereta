@@ -1,4 +1,4 @@
-<body class="dashboard-page sb-l-o sb-r-c">
+<body class="dashboard-page sb-l-o">
     <div id="main">
         <header class="navbar navbar-fixed-top">
             <div class="navbar-branding dark">
@@ -33,4 +33,4 @@
         </aside>
         <!-- Begin: Content -->
         <section id="content_wrapper">
-            <section id="content" class="table-layout">
+            <section id="content" class="table-layout float-left">

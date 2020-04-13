@@ -10,51 +10,51 @@ include '../template/sidebar.php';
             <span class="fa fa-table"></span>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label>Pilih Kereta</label>
-                    <select class="form-control">
-                        <option>
-                            <?php while ($row = $this->model->fetch($data)) { ?>
-                        <option value="<?php print $row['nama_kereta']; ?>"> <?php print $row['nama_kereta']; ?> </option>
-                    <?php } ?>
-                    </select>
-                </div>
+            <form class="form-horizontal" method="post">
 
                 <div class="form-group">
-                    <label>Kelas</label>
-                    <input type="text" class="form-control" name="nama_barang" autocomplete="off" required />
+                    <label>ID Kereta</label>
+                    <input type="text" class="form-control" name="id_kereta" autocomplete="off" required />
                 </div>
+
 
                 <div class="form-group">
                     <label>Jam Berangkat</label>
-                    <input type="text" class="form-control" name="harga_jual" autocomplete="off" required />
+                    <input type="text" class="form-control" name="jam_berangkat" autocomplete="off" required />
                 </div>
 
                 <div class="form-group">
                     <label>Jam Tiba</label>
-                    <input type="text" class="form-control" name="harga_beli" autocomplete="off" required />
+                    <input type="text" class="form-control" name="jam_tiba" autocomplete="off" required />
                 </div>
 
                 <div class="form-group">
                     <label>Harga</label>
-                    <input type="text" class="form-control" name="stok" autocomplete="off" required />
+                    <input type="text" class="form-control" name="harga" autocomplete="off" required />
                 </div>
 
                 <div class="form-group">
                     <label>Dari</label>
-                    <input type="text" class="form-control" name="stok" autocomplete="off" required />
+                    <input type="text" class="form-control" name="dari" autocomplete="off" required />
                 </div>
 
                 <div class="form-group">
                     <label>Tujuan</label>
-                    <input type="text" class="form-control" name="stok" autocomplete="off" required />
+                    <input type="text" class="form-control" name="tujuan" autocomplete="off" required />
                 </div>
 
-                <input type="submit" class="btn btn-success btn-submit" name="simpan" value="Simpan">
+                <button href="" type="submit" class="btn btn-success btn-submit" name="submit" value="Simpan">Tambah</button>
         </div>
     </div>
 </div>
 <?php
+if (isset($_POST['submit'])) {
+    $main = new jadwalControl();
+    $main->insertJadwal();
+    echo '<script language="javascript">
+                        alert ("Berhasil");
+                        window.location="index.php";
+                        </script>';
+}
 include '../template/footer.php';
 ?>
