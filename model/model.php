@@ -18,6 +18,7 @@ class model
 		return mysqli_query($this->koneksi, $query);
 	}
 
+	//MODEL ADMIN
 	function selectAll()
 	{
 		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
@@ -25,6 +26,8 @@ class model
 		return $on;
 	}
 
+
+	//MODEL PENUMPANGGGGGGG
 	function selectJadwal()
 	{
 		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
@@ -39,14 +42,16 @@ class model
 		return $rows['id_user'];
 	}
 
-	function insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat){
-		
+	function insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat)
+	{
+
 		$id_reservasi = $this->idReservasi();
 		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
 		return $this->execute($query);
 	}
 
-	function idReservasi(){
+	function idReservasi()
+	{
 		$query = "SELECT * FROM tbl_reservasi ORDER BY id_reservasi DESC LIMIT 0,1";
 		$mydata = $this->execute($query);
 		$row = mysqli_fetch_array($mydata);
@@ -61,7 +66,6 @@ class model
 		}
 
 		return $auto;
-
 	}
 	function selectProfil($username)
 	{

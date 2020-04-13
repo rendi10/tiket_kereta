@@ -18,9 +18,9 @@ class jadwalControl
         include "tampil_jadwal.php";
     }
 
-    function insertAdmin()
+    function viewInsertAdmin()
     {
-        include "tambah_jadwal.php";;
+        include "tambah_jadwal.php";
     }
 
     // function insert()
