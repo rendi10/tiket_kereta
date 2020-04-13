@@ -25,6 +25,11 @@ class model
 		return $this->fetch($cek);
 	}
 
+	function selectJadwal(){
+		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
+		$on = $this->execute($query);
+		return $on;
+	}
 	function selectBarang($kode_barang)
 	{
 		$query = "select * from barang where kode_barang='$kode_barang'";

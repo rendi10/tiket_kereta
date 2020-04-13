@@ -13,5 +13,12 @@ class jadwalControl
     function indexAdmin()
     {
         $data = $this->model->selectAll();
+
+    }
+
+    function viewSelect(){
+        $data = $this->model->selectJadwal();
+        include "jadwal.php";
+
     }
 }

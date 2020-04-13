@@ -5,12 +5,21 @@ include '../template/sidebar.php';
 
 
 ?>
-<div class="bs-component">
-    <div class="panel-heading">
-        <h3 class="panel-title">Dashboard</h3>
-    </div>
 
-</div>
+           <?php
+           include '../../../controller/jadwalControl.php';
+           $main = new jadwalControl();
+           if(isset($_GET['p'])){
+            //$main->viewInsert();
+            
+            }else{
+                    $main->viewSelect();
+            }
+           
+           
+           ?>
+           
+     
 <?php
 include '../template/footer.php';
 ?>
