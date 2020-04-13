@@ -26,6 +26,7 @@ class transaksiControl
     function insert(){
         $id_jadwal = $_POST['id_jadwal'];
         $username = $_POST['username'];
+        $tanggal_berangkat = $_POST['tanggal_berangkat'];
         $id_penumpang = $this->model->selectIdPenumpang($username);
         
         $insert = $this->model->insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat);
@@ -34,7 +35,7 @@ class transaksiControl
 
         $id_jadwal = $_POST['id_jadwal'];
         $tanggal_berangkat = $_POST['tanggal_berangkat'];
-        $others = $this->model->otherTransaksi();
+        $others = $this->model->otherTransaksi($id_jadwal, $tanggal_berangkat);
 
     }
     function insertOther(){

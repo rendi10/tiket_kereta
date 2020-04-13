@@ -84,7 +84,7 @@ class model
 		return $this->execute($query);
 
 	}
-	function otherTransaksi(){
+	function otherTransaksi($id_jadwal, $tanggal_berangkat){
 		$id_penumpang = $this->otherPenumpang();
 		$id_reservasi = $this->idReservasi();
 		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
@@ -158,23 +158,6 @@ class model
 		$query = "insert into tbl_penumpang values ('$id_penumpang', '$nama_penumpang', '$jk', '$ttl', '$no_hp', '$alamat')";
 		return $this->execute($query);
 	}
-	// function idUser(){
-	// 	$query = "SELECT * FROM tbl_user ORDER BY id_user DESC LIMIT 0,1";
-	//       $mydata = $this->execute($query);
-	//       $row= mysqli_fetch_array($mydata);
-	//       // ID OTOMATIS//***************************************************
-	//       $awal=substr($row['id_user'],3,4)+1;
-	//       if($awal<10){
-	//         $auto='ID00'.$awal;
-	//       }elseif($awal > 9 && $awal <=99){
-	//         $auto='ID0'.$awal;
-	//       }else{
-	//         $auto='ID'.$awal;
-	// 	  }
-
-	// 	  return $auto;
-
-	// }
 	function insertUser($username, $email, $password)
 	{
 		$id_user = $this->idPenumpang();
