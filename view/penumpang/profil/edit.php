@@ -4,7 +4,7 @@
         <div class="panel">
             <div class="col-sm-8">
                 <div class="panel-heading">
-                    <span class="panel-title">Edit Jadwal Keberangkatan</span>
+                    <span class="panel-title">Edit Profil</span>
                     <span class="fa fa-table"></span>
                 </div>
                 <div class="panel-body">

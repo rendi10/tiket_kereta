@@ -133,6 +133,23 @@ class model
 		return $this->execute($query);
 	}
 
+	function idKereta()
+	{
+		$query = "SELECT * FROM tbl_kereta ORDER BY id_kereta DESC LIMIT 0,1";
+		$mydata = $this->execute($query);
+		$row = mysqli_fetch_array($mydata);
+		// ID OTOMATIS//***************************************************
+		$awal = substr($row['id_kereta'], 3, 4) + 1;
+		if ($awal < 10) {
+			$auto = 'K00' . $awal;
+		} elseif ($awal > 9 && $awal <= 99) {
+			$auto = 'K00' . $awal;
+		} else {
+			$auto = 'K0' . $awal;
+		}
+
+		return $auto;
+	}
 	//MODEL RESERVASI ADMIN
 
 	function selectReservasi()
