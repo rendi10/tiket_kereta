@@ -3,14 +3,26 @@ include '../template/header.php';
 
 include '../template/sidebar.php';
 
+// mengaktifkan session php
+session_start();
+if(!isset($_SESSION['username'])) {
+   header('location: ../../index.php'); 
+} else { 
+   $username = $_SESSION['username']; 
+   
+
+}
+
+
 
 ?>
 
            <?php
             include '../../../controller/transaksiControl.php';
             $main = new transaksiControl();
-
+            
             if (isset($_GET['prib'])) {
+                
                 include 'transaksi.php';
 
                 if (isset($_POST['kirim'])) {
@@ -33,16 +45,12 @@ include '../template/sidebar.php';
                             
                             <tr>
                                 <td class="button">
-                                <div><a  href="index.php?prib" style="margin-right:5px" class="btn btn-primary btn-sm">Pesan Tiket untuk pribadi</a>
+                                <div><a  href="index.php?prib" style="margin-right:5px" class="btn btn-primary btn-sm">Pesan Tiket</a>
                                 </div>
                                 </td>
                             </tr>
                             <tr>
-                            <td class="button">
-                            <br>
-                            <div><a  href="pesanLagi.php"  style="margin-right:5px" class="btn btn-primary btn-sm">Pesan Tiket untuk orang lain</a>
-                            </div>
-                            </td>
+                            
                         </tr>
                             </table>
                         </section>
