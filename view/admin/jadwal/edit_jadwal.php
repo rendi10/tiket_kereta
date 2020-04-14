@@ -22,7 +22,7 @@ include '../template/sidebar.php';
                         </div>
                         <div class="form-group">
                             <label>ID Kereta</label>
-                            <input type="text" value="<?php echo $row['id_kereta']; ?>" class="form-control" name="id_kereta" autocomplete="off" required />
+                            <input type="text" value="<?php echo $row['id_kereta']; ?>" class="form-control" name="nama_kereta" autocomplete="off" required />
                         </div>
 
 

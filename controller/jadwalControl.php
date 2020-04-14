@@ -17,7 +17,7 @@ class jadwalControl
 
     function indexAdmin()
     {
-        $data = $this->model->selectAll();
+        $data = $this->model->selectJadwalTok();
         include "tampil_jadwal.php";
     }
 

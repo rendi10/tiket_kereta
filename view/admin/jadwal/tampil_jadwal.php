@@ -20,8 +20,7 @@ include '../template/sidebar.php';
                     <thead>
                         <tr>
                             <th>ID Jadwal</th>
-                            <th>Kereta</th>
-                            <th>Kelas</th>
+                            <th>ID Kereta</th>
                             <th>Jam Berangkat</th>
                             <th>Jam Tiba</th>
                             <th>Harga</th>
@@ -33,8 +32,7 @@ include '../template/sidebar.php';
                     <?php while ($row = $this->model->fetch($data)) { ?>
                         <tr>
                             <td><?php print $row['id_jadwal']; ?></td>
-                            <td><?php print $row['nama_kereta']; ?></td>
-                            <td><?php print $row['kelas']; ?></td>
+                            <td><?php print $row['id_kereta']; ?></td>
                             <td><?php print $row['jam_berangkat']; ?></td>
                             <td><?php print $row['jam_tiba']; ?></td>
                             <td><?php print $row['harga']; ?></td>

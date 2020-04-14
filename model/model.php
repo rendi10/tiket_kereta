@@ -26,6 +26,13 @@ class model
 		return $on;
 	}
 
+	function selectJadwalTok()
+	{
+		$query = "SELECT * FROM tbl_jadwal";
+		$on = $this->execute($query);
+		return $on;
+	}
+
 	function idJadwal()
 	{
 		$query = "SELECT * FROM tbl_jadwal ORDER BY id_jadwal DESC LIMIT 0,1";
@@ -162,7 +169,8 @@ class model
 		return $this->execute($query);
 	}
 
-	function selectRiwayat($username){
+	function selectRiwayat($username)
+	{
 		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
 		$id_penumpang = $this->execute($query);
 		$rows = $this->fetch($id_penumpang);
@@ -170,7 +178,6 @@ class model
 		$query = "SELECT * FROM tbl_kereta k JOIN tbl_jadwal j ON k.id_kereta = j.id_kereta JOIN
 				tbl_reservasi r ON  j.id_jadwal = r.id_jadwal WHERE r.id_penumpang='$var'";
 		return $this->execute($query);
-
 	}
 	function selectJadwal()
 	{
