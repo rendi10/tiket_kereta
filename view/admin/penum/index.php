@@ -1,6 +1,6 @@
            <?php
-            include '../../../controller/keretaControl.php';
-            $main = new keretaControl();
+            include '../../../controller/penumControl.php';
+            $main = new penumControl();
             // if (isset($_GET['t'])) {
             //     $main->viewInsertJadwal();
             //     // if (isset($_POST['submit'])) {
@@ -17,6 +17,6 @@
             //     $id_jadwal = $_GET['d'];
             //     $main->hapusJadwalControl($id_jadwal);
             // } else {
-            $main->indexKereta();
+            $main->indexPenum();
             // }
             ?>

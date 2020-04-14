@@ -59,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="penum/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Penumpang</span>
                         </a>

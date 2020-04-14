@@ -2,7 +2,7 @@
 
 include "../../../model/model.php";
 
-class keretaControl
+class penumControl
 {
 
     public $model;
@@ -11,9 +11,9 @@ class keretaControl
     {
         $this->model = new model();
     }
-    function indexKereta()
+    function indexPenum()
     {
-        $data = $this->model->selectAllKereta();
-        include "tampil_kereta.php";
+        $data = $this->model->selectAllPenum();
+        include "tampil_penum.php";
     }
 }

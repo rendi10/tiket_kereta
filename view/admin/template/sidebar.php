@@ -37,19 +37,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
-                            <span class="glyphicon glyphicon-time"></span>
+                        <a href="../jadwal/index.php"> <span class="glyphicon glyphicon-time"></span>
                             <span class="sidebar-title">Jadwal</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../penum/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Penumpang</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../kereta/index.php">
                             <span class="glyphicon glyphicon-bed"></span>
                             <span class="sidebar-title">Kereta</span>
                         </a>
