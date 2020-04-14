@@ -31,25 +31,25 @@
                 <ul class="nav sidebar-menu">
                     <li class="sidebar-label pt20">Menu</li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../reservasi/ndex.php">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <span class="sidebar-title">Reservasi</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../jadwal/index.php">
                             <span class="glyphicon glyphicon-time"></span>
                             <span class="sidebar-title">Jadwal</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../penumpang/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Penumpang</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard/index.php">
+                        <a href="../kereta/index.php">
                             <span class="glyphicon glyphicon-bed"></span>
                             <span class="sidebar-title">Kereta</span>
                         </a>

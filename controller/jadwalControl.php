@@ -11,6 +11,7 @@ class jadwalControl
     {
         $this->model = new model();
     }
+  
 
     //CONTROLLER ADMIN DISINI!
 

@@ -21,6 +21,7 @@ class controller
 	{
 		$data = $this->model->selectAll();
 	}
+	
 
 	function insertPenumpang()
 	{

@@ -1,6 +1,6 @@
 <?php
 
-include "../../model/model.php";
+include "../../../model/model.php";
 
 class keretaControl
 {
@@ -14,6 +14,7 @@ class keretaControl
     function indexKereta()
     {
         $data = $this->model->selectAllKereta();
-        include "tampil_kereta.php";
+        include 'tampil_kereta.php';
     }
+
 }
