@@ -70,6 +70,14 @@ class model
 		return $this->execute($query);
 	}
 
+
+	//MODEL PENUM
+	function selectAllPenum()
+	{
+		$query = "select * from tbl_penumpang";
+		return $this->execute($query);
+	}
+
 	//MODEL KERETAAAAAA
 
 	function selectAllKereta()
@@ -111,8 +119,9 @@ class model
 		$query = "insert into tbl_penumpang values ('$id_penumpang', '$nama_penumpang', '$jk', '$ttl', '$no_hp', '$alamat')";
 		return $this->execute($query);
 	}
-	function otherTransaksi($id_jadwal, $tanggal_berangkat){
-		$id_penumpang = $this->idPenumpang();
+	function otherTransaksi($id_jadwal, $tanggal_berangkat)
+	{
+		$id_penumpang = $this->otherPenumpang();
 		$id_reservasi = $this->idReservasi();
 		$query = "INSERT INTO tbl_reservasi VALUES ('$id_reservasi', '$id_jadwal', '$id_penumpang', '$tanggal_berangkat')";
 		return $this->execute($query);

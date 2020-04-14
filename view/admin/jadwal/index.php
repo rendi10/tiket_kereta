@@ -1,11 +1,3 @@
-<?php
-include '../template/header.php';
-
-include '../template/sidebar.php';
-
-
-?>
-
            <?php
             include '../../../controller/jadwalControl.php';
             $main = new jadwalControl();
@@ -30,8 +22,3 @@ include '../template/sidebar.php';
 
 
             ?>
-           
-     
-<?php
-include '../template/footer.php';
-?>
