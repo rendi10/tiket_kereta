@@ -43,7 +43,7 @@ class jadwalControl
     function viewEditJadwal($id_jadwal)
     {
         $data = $this->model->selectJadwalUpdate($id_jadwal);
-        // $row = $this->model->fetch($data);
+        $row = $this->model->fetch($data);
 
         include "edit_jadwal.php";
     }

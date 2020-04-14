@@ -1,31 +1,21 @@
 <body class="dashboard-page sb-l-o sb-r-c">
     <div id="main">
-        <header class="navbar navbar-fixed-top">
+        <header class="navbar navbar-fixed-top bg-system">
             <div class="navbar-branding">
                 <a class="navbar-brand" href="../index.php">
-                    <b>Penumpang</b>Designs
+                    <b>Tiket</b>Kereta
                 </a>
-                <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
             </div>
-
-            <form class="navbar-form navbar-left navbar-search" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search..." value="Search...">
-                </div>
-            </form>
             <ul class="nav navbar-nav navbar-right">
-
                 <li class="dropdown-footer">
                     <a href="../logout.php" class="">
                         <span class="fa fa-power-off pr5"></span> Logout </a>
                 </li>
             </ul>
-            </li>
-            </ul>
 
         </header>
         <!-- Start: Sidebar Left -->
-        <aside id="sidebar_left" class="nano nano-primary affix">
+        <aside id="sidebar_left" class="nano nano-primary affix sidebar-light">
             <div class="sidebar-left-content nano-content">
                 <!-- Start: Sidebar Left Menu -->
                 <ul class="nav sidebar-menu">

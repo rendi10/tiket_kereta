@@ -33,9 +33,6 @@ include '../template/sidebar.php';
                                 <td><?php print $row['kelas']; ?></td>
                                 <td>
                                     <div class=''>
-                                        <a href='index.php?u=<?php echo $row['id_kereta']; ?>' title='Update' style='margin-right:5px' class='btn btn-success btn-sm'>
-                                            <i class='glyphicon glyphicon-edit'></i>
-                                        </a>
                                         <a href='index.php?d=<?php echo $row['id_kereta']; ?>' title='Delete' style='margin-right:5px' class='btn btn-danger btn-sm'>
                                             <i class='glyphicon glyphicon-trash'></i>
                                         </a>
