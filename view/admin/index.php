@@ -1,3 +1,15 @@
+<?php
+// mengaktifkan session php
+session_start();
+if(!isset($_SESSION['username'])) {
+   header('location: ../../index.php'); 
+} else { 
+   $username = $_SESSION['username']; 
+   
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -59,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="penumpang/index.php">
+                        <a href="penum/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Penumpang</span>
                         </a>
@@ -74,15 +86,9 @@
             </div>
         </aside>
         <!-- End: Sidebar Left -->
+       
 
-        <!-- Start: Content-Wrapper -->
-        <section id="content_wrapper">
-            <!-- Begin: Content -->
-            <section id="content" class="animated fadeIn">
-            </section>
-        </section>
-    </div>
-    <!-- End: Main -->
+       
 
     <!-- BEGIN: PAGE SCRIPTS -->
 

@@ -125,7 +125,7 @@ include '../template/sidebar.php';
                 include '../../../controller/transaksiControl.php';
                 $main = new transaksiControl();
                 if (isset($_POST['submit'])) {
-                    $main->insertOthers();
+                    //$main->insertOthers();
                     $main->insertOther();
 
                     echo '<script language="javascript">

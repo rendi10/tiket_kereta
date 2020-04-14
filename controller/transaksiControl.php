@@ -41,11 +41,14 @@ class transaksiControl
     }
     function insertOther()
     {
+        $id_jadwal = $_POST['id_jadwal'];
+        $tanggal_berangkat = $_POST['tanggal_berangkat'];
         $nama_penumpang = $_POST['nama_penumpang'];
         $jk = $_POST['jk'];
         $ttl = $_POST['ttl'];
         $no_hp = $_POST['no_hp'];
         $alamat = $_POST['alamat'];
+        $others = $this->model->otherTransaksi($id_jadwal, $tanggal_berangkat);
         $other = $this->model->insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
     }
 

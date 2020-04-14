@@ -1,3 +1,15 @@
+<?php
+// mengaktifkan session php
+session_start();
+if(!isset($_SESSION['username'])) {
+   header('location: ../../index.php'); 
+} else { 
+   $username = $_SESSION['username']; 
+   
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -69,7 +81,16 @@
                         </a>
                        
                     </li>
+                    <li>
+                        <a href="profil/index.php">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="sidebar-title">Profil</span>
+                        </a>
+                       
+                    </li>
                 </ul>
+
+                
             </div>
         </aside>
         <!-- End: Sidebar Left -->
@@ -78,7 +99,7 @@
         <section id="content_wrapper">
             <!-- Begin: Content -->
             <section id="content" class="animated fadeIn">
-            Welcome
+            Welcome <?php echo $username = $_SESSION['username'];?>
             </section>
         </section>
     </div>

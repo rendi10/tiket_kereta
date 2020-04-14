@@ -38,6 +38,13 @@
                        
                         
                     </li>
+                    <li>
+                        <a href="../profil/index.php">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="sidebar-title">Profil</span>
+                        </a>
+                       
+                    </li>
                 </ul>
             </div>
         </aside>

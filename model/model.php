@@ -70,6 +70,18 @@ class model
 		return $this->execute($query);
 	}
 
+	function dataTransaksi(){
+		$query = "SELECT * FROM tbl_reservasi";
+		$cek = $this->execute($query);
+		
+		return $cek ;
+	}
+	function num($var)
+	{
+		return mysqli_num_rows($var);
+	}
+
+
 
 	//MODEL PENUM
 	function selectAllPenum()
@@ -119,6 +131,22 @@ class model
 
 
 	//MODEL PENUMPANGGGGGGG
+
+	function updateProfil($id_penumpang, $nama_penumpang, $jk, $ttl, $no_hp , $alamat){
+
+		$query = "UPDATE tbl_penumpang SET nama_penumpang='$nama_penumpang', jk='$jk', ttl='$ttl', no_hp='$no_hp', alamat='$alamat' WHERE id_penumpang='$id_penumpang'";
+		return $this->execute($query);
+	}
+
+	function selectProfil($username){
+		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
+		$id_penumpang = $this->execute($query);
+		$rows = $this->fetch($id_penumpang);
+		$var =  $rows['id_user'];
+		$query = "SELECT * FROM tbl_penumpang WHERE id_penumpang='$var'";
+		return $this->execute($query);
+
+	}
 	function selectJadwal()
 	{
 		$query = "SELECT * FROM tbl_jadwal j JOIN tbl_kereta k ON k.id_kereta = j.id_kereta";
@@ -146,7 +174,7 @@ class model
 	}
 	function insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat)
 	{
-		$id_penumpang = $this->idPenumpang();
+		$id_penumpang = $this->otherPenumpang();
 		$query = "insert into tbl_penumpang values ('$id_penumpang', '$nama_penumpang', '$jk', '$ttl', '$no_hp', '$alamat')";
 		return $this->execute($query);
 	}
