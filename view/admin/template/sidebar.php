@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../penumpang/index.php">
+                        <a href="../penum/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Penumpang</span>
                         </a>

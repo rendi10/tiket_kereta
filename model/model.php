@@ -78,6 +78,21 @@ class model
 		return $this->execute($query);
 	}
 
+	function selectAllPenumFetch()
+	{
+		$query = "select * from tbl_penumpang";
+		$data = $this->execute($query);
+		$penum = $this->fetch($data);
+		return $penum;
+	}
+
+	function selectPenum($id_penumpang)
+	{
+		$query = "select * from tbl_penumpang where id_penumpang='$id_penumpang'";
+		return $this->execute($query);
+	}
+
+
 	//MODEL KERETAAAAAA
 
 	function selectAllKereta()
