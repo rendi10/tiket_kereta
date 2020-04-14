@@ -51,6 +51,15 @@ class transaksiControl
         $others = $this->model->otherTransaksi($id_jadwal, $tanggal_berangkat);
         $other = $this->model->insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
     }
+    function riwayat(){
+        $username = $_SESSION['username'];
+        $data = $this->model->selectRiwayat($username);
+       
+
+        include "riwayat.php";
+        
+
+    }
 
     //RESEVASI ADMIN
 

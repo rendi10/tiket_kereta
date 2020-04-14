@@ -132,6 +132,7 @@ class model
 
 	//MODEL PENUMPANGGGGGGG
 
+
 	function updateProfil($id_penumpang, $nama_penumpang, $jk, $ttl, $no_hp , $alamat){
 
 		$query = "UPDATE tbl_penumpang SET nama_penumpang='$nama_penumpang', jk='$jk', ttl='$ttl', no_hp='$no_hp', alamat='$alamat' WHERE id_penumpang='$id_penumpang'";
@@ -144,6 +145,17 @@ class model
 		$rows = $this->fetch($id_penumpang);
 		$var =  $rows['id_user'];
 		$query = "SELECT * FROM tbl_penumpang WHERE id_penumpang='$var'";
+		return $this->execute($query);
+
+	}
+
+	function selectRiwayat($username){
+		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
+		$id_penumpang = $this->execute($query);
+		$rows = $this->fetch($id_penumpang);
+		$var =  $rows['id_user'];
+		$query = "SELECT * FROM tbl_kereta k JOIN tbl_jadwal j ON k.id_kereta = j.id_kereta JOIN
+				tbl_reservasi r ON  j.id_jadwal = r.id_jadwal WHERE r.id_penumpang='$var'";
 		return $this->execute($query);
 
 	}

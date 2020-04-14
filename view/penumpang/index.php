@@ -88,6 +88,13 @@ if(!isset($_SESSION['username'])) {
                         </a>
                        
                     </li>
+                    <li>
+                        <a href="riwayat/index.php">
+                            <span class="glyphicon glyphicon-book"></span>
+                            <span class="sidebar-title">Riwayat</span>
+                        </a>
+                       
+                    </li>
                 </ul>
 
                 
