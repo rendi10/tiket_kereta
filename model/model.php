@@ -70,11 +70,12 @@ class model
 		return $this->execute($query);
 	}
 
-	function dataTransaksi(){
+	function dataTransaksi()
+	{
 		$query = "SELECT * FROM tbl_reservasi";
 		$cek = $this->execute($query);
-		
-		return $cek ;
+
+		return $cek;
 	}
 	function num($var)
 	{
@@ -120,6 +121,18 @@ class model
 		return $this->execute($query);
 	}
 
+	function insertKereta($id_kereta, $nama_kereta, $kelas)
+	{
+		$query = "insert into tbl_kereta values ('$id_kereta','$nama_kereta', '$kelas')";
+		return $this->execute($query);
+	}
+
+	function hapusKeretaModel($id_kereta)
+	{
+		$query = "delete from tbl_kereta where id_kereta='$id_kereta'";
+		return $this->execute($query);
+	}
+
 	//MODEL RESERVASI ADMIN
 
 	function selectReservasi()
@@ -132,20 +145,21 @@ class model
 
 	//MODEL PENUMPANGGGGGGG
 
-	function updateProfil($id_penumpang, $nama_penumpang, $jk, $ttl, $no_hp , $alamat){
+	function updateProfil($id_penumpang, $nama_penumpang, $jk, $ttl, $no_hp, $alamat)
+	{
 
 		$query = "UPDATE tbl_penumpang SET nama_penumpang='$nama_penumpang', jk='$jk', ttl='$ttl', no_hp='$no_hp', alamat='$alamat' WHERE id_penumpang='$id_penumpang'";
 		return $this->execute($query);
 	}
 
-	function selectProfil($username){
+	function selectProfil($username)
+	{
 		$query = "SELECT id_user FROM tbl_user WHERE username='$username'";
 		$id_penumpang = $this->execute($query);
 		$rows = $this->fetch($id_penumpang);
 		$var =  $rows['id_user'];
 		$query = "SELECT * FROM tbl_penumpang WHERE id_penumpang='$var'";
 		return $this->execute($query);
-
 	}
 	function selectJadwal()
 	{

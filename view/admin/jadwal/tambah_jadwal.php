@@ -17,7 +17,7 @@ include '../template/sidebar.php';
 
                         <div class="form-group">
                             <label>Pilih Kereta</label>
-                            <select class="form-control">
+                            <select class="form-control" name="id_kereta">
                                 <?php foreach ($data as $pilih) : ?>
                                     <option value="<?php echo $pilih['id_kereta']; ?>"><?php echo $pilih['nama_kereta']; ?></option>
                                 <?php endforeach; ?>

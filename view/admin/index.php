@@ -1,12 +1,10 @@
 <?php
 // mengaktifkan session php
 session_start();
-if(!isset($_SESSION['username'])) {
-   header('location: ../../index.php'); 
-} else { 
-   $username = $_SESSION['username']; 
-   
-
+if (!isset($_SESSION['username'])) {
+    header('location: ../../index.php');
+} else {
+    $username = $_SESSION['username'];
 }
 
 ?>
@@ -44,16 +42,21 @@ if(!isset($_SESSION['username'])) {
 
 <body class="dashboard-page sb-l-o sb-r-c">
     <div id="main">
-        <header class="navbar navbar-fixed-top">
+        <header class="navbar navbar-fixed-top bg-system">
             <div class="navbar-branding dark">
                 <a class="navbar-brand" href="dashboard.html">
-                    <b>Admin</b>
+                    <b>TIKET</b>kereta
                 </a>
-                <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown-footer">
+                    <a href="logout.php" class="">
+                        <span class="fa fa-power-off pr5"></span> Logout </a>
+                </li>
+            </ul>
         </header>
         <!-- Start: Sidebar Left -->
-        <aside id="sidebar_left" class="nano nano-primary affix">
+        <aside id="sidebar_left" class="nano nano-primary affix sidebar-light">
             <div class="sidebar-left-content nano-content">
                 <!-- Start: Sidebar Left Menu -->
                 <ul class="nav sidebar-menu">
@@ -86,172 +89,172 @@ if(!isset($_SESSION['username'])) {
             </div>
         </aside>
         <!-- End: Sidebar Left -->
-       
 
-       
 
-    <!-- BEGIN: PAGE SCRIPTS -->
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery-1.11.1.min.js"></script>
-    <script src="../vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
 
-    <!-- HighCharts Plugin -->
-    <script src="../vendor/plugins/highcharts/highcharts.js"></script>
+        <!-- BEGIN: PAGE SCRIPTS -->
 
-    <!-- Sparklines Plugin -->
-    <script src=".../vendor/plugins/sparkline/jquery.sparkline.min.js"></script>
+        <!-- jQuery -->
+        <script src="../vendor/jquery/jquery-1.11.1.min.js"></script>
+        <script src="../vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
 
-    <!-- Simple Circles Plugin -->
-    <script src="../vendor/plugins/circles/circles.js"></script>
+        <!-- HighCharts Plugin -->
+        <script src="../vendor/plugins/highcharts/highcharts.js"></script>
 
-    <!-- JvectorMap Plugin + US Map (more maps in plugin/assets folder) -->
-    <script src="../vendor/plugins/jvectormap/jquery.jvectormap.min.js"></script>
-    <script src="../vendor/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script>
+        <!-- Sparklines Plugin -->
+        <script src=".../vendor/plugins/sparkline/jquery.sparkline.min.js"></script>
 
-    <!-- Theme Javascript -->
-    <script src="../assets/js/utility/utility.js"></script>
-    <script src="../assets/js/demo/demo.js"></script>
-    <script src="../assets/js/main.js"></script>
+        <!-- Simple Circles Plugin -->
+        <script src="../vendor/plugins/circles/circles.js"></script>
 
-    <!-- Widget Javascript -->
-    <script src="../../assets/js/demo/widgets.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
+        <!-- JvectorMap Plugin + US Map (more maps in plugin/assets folder) -->
+        <script src="../vendor/plugins/jvectormap/jquery.jvectormap.min.js"></script>
+        <script src="../vendor/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script>
 
-            "use strict";
+        <!-- Theme Javascript -->
+        <script src="../assets/js/utility/utility.js"></script>
+        <script src="../assets/js/demo/demo.js"></script>
+        <script src="../assets/js/main.js"></script>
 
-            // Init Theme Core      
-            Core.init();
+        <!-- Widget Javascript -->
+        <script src="../../assets/js/demo/widgets.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
 
-            // Init Demo JS
-            Demo.init();
+                "use strict";
 
-            // Init Widget Demo JS
-            // demoHighCharts.init();
+                // Init Theme Core      
+                Core.init();
 
-            // Because we are using Admin Panels we use the OnFinish 
-            // callback to activate the demoWidgets. It's smoother if
-            // we let the panels be moved and organized before 
-            // filling them with content from various plugins
+                // Init Demo JS
+                Demo.init();
 
-            // Init plugins used on this page
-            // HighCharts, JvectorMap, Admin Panels
+                // Init Widget Demo JS
+                // demoHighCharts.init();
 
-            // Init Admin Panels on widgets inside the ".admin-panels" container
-            $('.admin-panels').adminpanel({
-                grid: '.admin-grid',
-                draggable: true,
-                preserveGrid: true,
-                mobile: false,
-                onStart: function() {
-                    // Do something before AdminPanels runs
-                },
-                onFinish: function() {
-                    $('.admin-panels').addClass('animated fadeIn').removeClass('fade-onload');
+                // Because we are using Admin Panels we use the OnFinish 
+                // callback to activate the demoWidgets. It's smoother if
+                // we let the panels be moved and organized before 
+                // filling them with content from various plugins
 
-                    // Init the rest of the plugins now that the panels
-                    // have had a chance to be moved and organized.
-                    // It's less taxing to organize empty panels
-                    demoHighCharts.init();
-                    runVectorMaps(); // function below
-                },
-                onSave: function() {
-                    $(window).trigger('resize');
-                }
-            });
+                // Init plugins used on this page
+                // HighCharts, JvectorMap, Admin Panels
 
-            // Widget VectorMap
-            function runVectorMaps() {
+                // Init Admin Panels on widgets inside the ".admin-panels" container
+                $('.admin-panels').adminpanel({
+                    grid: '.admin-grid',
+                    draggable: true,
+                    preserveGrid: true,
+                    mobile: false,
+                    onStart: function() {
+                        // Do something before AdminPanels runs
+                    },
+                    onFinish: function() {
+                        $('.admin-panels').addClass('animated fadeIn').removeClass('fade-onload');
 
-                // Jvector Map Plugin
-                var runJvectorMap = function() {
-                    // Data set
-                    var mapData = [900, 700, 350, 500];
-                    // Init Jvector Map
-                    $('#WidgetMap').vectorMap({
-                        map: 'us_lcc_en',
-                        //regionsSelectable: true,
-                        backgroundColor: 'transparent',
-                        series: {
+                        // Init the rest of the plugins now that the panels
+                        // have had a chance to be moved and organized.
+                        // It's less taxing to organize empty panels
+                        demoHighCharts.init();
+                        runVectorMaps(); // function below
+                    },
+                    onSave: function() {
+                        $(window).trigger('resize');
+                    }
+                });
+
+                // Widget VectorMap
+                function runVectorMaps() {
+
+                    // Jvector Map Plugin
+                    var runJvectorMap = function() {
+                        // Data set
+                        var mapData = [900, 700, 350, 500];
+                        // Init Jvector Map
+                        $('#WidgetMap').vectorMap({
+                            map: 'us_lcc_en',
+                            //regionsSelectable: true,
+                            backgroundColor: 'transparent',
+                            series: {
+                                markers: [{
+                                    attribute: 'r',
+                                    scale: [3, 7],
+                                    values: mapData
+                                }]
+                            },
+                            regionStyle: {
+                                initial: {
+                                    fill: '#E5E5E5'
+                                },
+                                hover: {
+                                    "fill-opacity": 0.3
+                                }
+                            },
                             markers: [{
-                                attribute: 'r',
-                                scale: [3, 7],
-                                values: mapData
-                            }]
-                        },
-                        regionStyle: {
-                            initial: {
-                                fill: '#E5E5E5'
+                                latLng: [37.78, -122.41],
+                                name: 'San Francisco,CA'
+                            }, {
+                                latLng: [36.73, -103.98],
+                                name: 'Texas,TX'
+                            }, {
+                                latLng: [38.62, -90.19],
+                                name: 'St. Louis,MO'
+                            }, {
+                                latLng: [40.67, -73.94],
+                                name: 'New York City,NY'
+                            }],
+                            markerStyle: {
+                                initial: {
+                                    fill: '#a288d5',
+                                    stroke: '#b49ae0',
+                                    "fill-opacity": 1,
+                                    "stroke-width": 10,
+                                    "stroke-opacity": 0.3,
+                                    r: 3
+                                },
+                                hover: {
+                                    stroke: 'black',
+                                    "stroke-width": 2
+                                },
+                                selected: {
+                                    fill: 'blue'
+                                },
+                                selectedHover: {}
                             },
-                            hover: {
-                                "fill-opacity": 0.3
-                            }
-                        },
-                        markers: [{
-                            latLng: [37.78, -122.41],
-                            name: 'San Francisco,CA'
-                        }, {
-                            latLng: [36.73, -103.98],
-                            name: 'Texas,TX'
-                        }, {
-                            latLng: [38.62, -90.19],
-                            name: 'St. Louis,MO'
-                        }, {
-                            latLng: [40.67, -73.94],
-                            name: 'New York City,NY'
-                        }],
-                        markerStyle: {
-                            initial: {
-                                fill: '#a288d5',
-                                stroke: '#b49ae0',
-                                "fill-opacity": 1,
-                                "stroke-width": 10,
-                                "stroke-opacity": 0.3,
-                                r: 3
-                            },
-                            hover: {
-                                stroke: 'black',
-                                "stroke-width": 2
-                            },
-                            selected: {
-                                fill: 'blue'
-                            },
-                            selectedHover: {}
-                        },
-                    });
-                    // Manual code to alter the Vector map plugin to 
-                    // allow for individual coloring of countries
-                    var states = ['US-CA', 'US-TX', 'US-MO',
-                        'US-NY'
-                    ];
-                    var colors = [bgWarningLr, bgPrimaryLr, bgInfoLr, bgAlertLr];
-                    var colors2 = [bgWarning, bgPrimary, bgInfo, bgAlert];
-                    $.each(states, function(i, e) {
-                        $("#WidgetMap path[data-code=" + e + "]").css({
-                            fill: colors[i]
                         });
-                    });
-                    $('#WidgetMap').find('.jvectormap-marker')
-                        .each(function(i, e) {
-                            $(e).css({
-                                fill: colors2[i],
-                                stroke: colors2[i]
+                        // Manual code to alter the Vector map plugin to 
+                        // allow for individual coloring of countries
+                        var states = ['US-CA', 'US-TX', 'US-MO',
+                            'US-NY'
+                        ];
+                        var colors = [bgWarningLr, bgPrimaryLr, bgInfoLr, bgAlertLr];
+                        var colors2 = [bgWarning, bgPrimary, bgInfo, bgAlert];
+                        $.each(states, function(i, e) {
+                            $("#WidgetMap path[data-code=" + e + "]").css({
+                                fill: colors[i]
                             });
                         });
+                        $('#WidgetMap').find('.jvectormap-marker')
+                            .each(function(i, e) {
+                                $(e).css({
+                                    fill: colors2[i],
+                                    stroke: colors2[i]
+                                });
+                            });
+                    }
+
+                    if ($('#WidgetMap').length) {
+                        runJvectorMap();
+                    }
                 }
 
-                if ($('#WidgetMap').length) {
-                    runJvectorMap();
-                }
-            }
 
 
+            });
+        </script>
 
-        });
-    </script>
-
-    <!-- END: PAGE SCRIPTS -->
+        <!-- END: PAGE SCRIPTS -->
 
 </body>
 

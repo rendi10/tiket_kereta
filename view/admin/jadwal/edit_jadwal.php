@@ -52,7 +52,7 @@ include '../template/sidebar.php';
                         </div>
 
                         <button href="" type="submit" class="btn btn-success btn-submit" name="update" value="update">Update</button>
-                        </form>
+                    </form>
                 </div>
             </div>
         </div>

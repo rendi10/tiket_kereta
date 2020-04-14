@@ -1,7 +1,7 @@
 <?php
 include '../template/header.php';
 include '../template/sidebar.php';
-
+$no = 1;
 ?>
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
@@ -19,7 +19,9 @@ include '../template/sidebar.php';
                     </span>
                     <ul class="list-group mt25">
                         <?php foreach ($data as $penum) : ?>
-                            <li class="list-group-item"><?= $penum['nama_penumpang']; ?>
+
+                            <li class="list-group-item">
+                                <?= $no++ ?> . <?= $penum['nama_penumpang']; ?>
                                 <a href='index.php?det=<?php echo $penum['id_penumpang']; ?>' class="badge badge-success">detail</a>
                             </li>
                         <?php endforeach; ?>
