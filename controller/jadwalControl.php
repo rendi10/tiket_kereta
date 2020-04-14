@@ -11,7 +11,7 @@ class jadwalControl
     {
         $this->model = new model();
     }
-  
+
 
     //CONTROLLER ADMIN DISINI!
 
@@ -24,6 +24,7 @@ class jadwalControl
     //Tambah jadwal
     function viewInsertJadwal()
     {
+        $data = $this->model->selectKereta();
         include "tambah_jadwal.php";
     }
 

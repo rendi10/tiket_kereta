@@ -2,8 +2,6 @@
 include '../template/header.php';
 include '../template/sidebar.php';
 
-$ob = new model();
-
 ?>
 
 <section id="content_wrapper">
@@ -18,11 +16,11 @@ $ob = new model();
                     <form class="form-horizontal" method="post">
 
                         <div class="form-group">
-                            <label>Nama Kereta</label>
-                            <select class="form-control" name="id_kereta">
-                                <?php while ($pilih = mysqli_fetch_array($this->selectAll())) { ?>
-                                    <option value="<?= $pilih['id_kereta'] ?>"><?= $pilih['nama_kereta']; ?></option>
-                                <?php } ?>
+                            <label>Pilih Kereta</label>
+                            <select class="form-control">
+                                <?php foreach ($data as $pilih) : ?>
+                                    <option value="<?php echo $pilih['id_kereta']; ?>"><?php echo $pilih['nama_kereta']; ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
 
