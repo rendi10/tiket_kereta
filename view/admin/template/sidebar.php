@@ -31,7 +31,7 @@
                 <ul class="nav sidebar-menu">
                     <li class="sidebar-label pt20">Menu</li>
                     <li>
-                        <a href="../reservasi/ndex.php">
+                        <a href="../reservasi/index.php">
                             <span class="glyphicon glyphicon-list-alt"></span>
                             <span class="sidebar-title">Reservasi</span>
                         </a>

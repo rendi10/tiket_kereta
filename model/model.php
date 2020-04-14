@@ -87,6 +87,13 @@ class model
 		return $cek;
 	}
 
+	//MODEL RESERVASI ADMIN
+
+	function selectReservasi(){
+		$query = "SELECT * FROM tbl_reservasi r JOIN tbl_penumpang p ON r.id_penumpang = p.id_penumpang";
+		$cek = $this->execute($query);
+		return $cek;
+	}
 
 
 	//MODEL PENUMPANGGGGGGG
@@ -96,6 +103,8 @@ class model
 		$on = $this->execute($query);
 		return $on;
 	}
+
+	
 	function otherPenumpang()
 	{
 		$query = "SELECT * FROM tbl_penumpang ORDER BY id_penumpang DESC LIMIT 0,1";

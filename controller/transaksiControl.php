@@ -48,4 +48,14 @@ class transaksiControl
         $alamat = $_POST['alamat'];
         $other = $this->model->insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
     }
+
+    //RESEVASI ADMIN
+
+    function view(){
+        $data = $this->model->selectReservasi();
+        include 'tabel.php';
+
+    }
+
+    
 }

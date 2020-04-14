@@ -53,6 +53,7 @@ $ob = new model();
                         </div>
 
                         <button href="" type="submit" class="btn btn-success btn-submit" name="submit" value="Simpan">Tambah</button>
+                    </form>
                 </div>
             </div>
         </div>
