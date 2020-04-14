@@ -19,6 +19,7 @@ class keretaControl
 
     function viewInsertKereta()
     {
+        $otomatis = $this->model->idKereta();
         $data = $this->model->selectKereta();
         include "tambah_kereta.php";
     }

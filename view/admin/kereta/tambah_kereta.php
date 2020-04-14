@@ -18,7 +18,7 @@ include '../template/sidebar.php';
 
                         <div class="form-group">
                             <label>ID Kereta</label>
-                            <input type="text" class="form-control" name="id_kereta" autocomplete="off" required />
+                            <input type="text" class="form-control" name="id_kereta" value="<?php echo $otomatis ;?>" autocomplete="off" readonly required />
                         </div>
 
                         <div class="form-group">
