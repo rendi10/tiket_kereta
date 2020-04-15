@@ -12,8 +12,10 @@ class transaksiControl
         $this->model = new model();
     }
 
-    function viewPribadi()
+    function viewPribadi($id_jadwal)
     {
+        $data = $this->model->selectTransaksi($id_jadwal);
+        $row = $this->model->fetch($data);
         include "transaksi.php";
     }
     function viewSelect()
@@ -51,23 +53,20 @@ class transaksiControl
         $others = $this->model->otherTransaksi($id_jadwal, $tanggal_berangkat);
         $other = $this->model->insertOtherPenumpang($nama_penumpang, $jk, $ttl, $no_hp, $alamat);
     }
-    function riwayat(){
+    function riwayat()
+    {
         $username = $_SESSION['username'];
         $data = $this->model->selectRiwayat($username);
-       
+
 
         include "riwayat.php";
-        
-
     }
 
     //RESEVASI ADMIN
 
-    function view(){
+    function view()
+    {
         $data = $this->model->selectReservasi();
         include 'tabel.php';
-
     }
-
-    
 }

@@ -20,7 +20,7 @@ include '../template/sidebar.php';
                 <form method="POST" action="index.php?prib" id="form-register2">
                     <div class="panel-body p25">
                         <div class="section-divider mt10 mb40">
-                            <span>Ingin pesan lagi?? <a href="index.php?" class="theme-link">klik disini</a> </span>
+                            <span>Ingin pesan lagi? <a href="index.php?" class="theme-link">klik disini</a> </span>
 
                         </div>
                         <!-- .section-divider -->
@@ -32,7 +32,7 @@ include '../template/sidebar.php';
 
                             <div class="section">
                                 <label for="id_jadwal" class="field prepend-icon">
-                                    <input type="text" name="id_jadwal" id="id_jadwal" class="gui-input" placeholder="Pilih Id Jadwal yang dipilih">
+                                    <input type="text" name="id_jadwal" id="id_jadwal" class="gui-input" value="<?php print $row['id_jadwal']; ?>" placeholder="Pilih Id Jadwal yang dipilih" readonly>
                                     <label for="id_jadwal" class="field-icon">
                                         <i class="fa fa-home"></i>
                                     </label>

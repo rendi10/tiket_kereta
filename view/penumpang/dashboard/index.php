@@ -20,8 +20,8 @@ if (!isset($_SESSION['username'])) {
             $main = new transaksiControl();
 
             if (isset($_GET['prib'])) {
-
-                include 'transaksi.php';
+                $id_jadwal = $_GET['prib'];
+                $main->viewPribadi($id_jadwal);
 
                 if (isset($_POST['kirim'])) {
                     $main->insert();

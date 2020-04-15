@@ -24,6 +24,7 @@ include '../template/sidebar.php';
 							<th>Harga</th>
 							<th>Dari</th>
 							<th>Tujuan</th>
+							<th>Aksi</th>
 
 						</tr>
 					</thead>
@@ -42,13 +43,13 @@ include '../template/sidebar.php';
 							<td><?php print $row['harga']; ?></td>
 							<td><?php print $row['dari']; ?></td>
 							<td><?php print $row['tujuan']; ?></td>
-
+							<td><a href="index.php?prib=<?php echo $row['id_jadwal']; ?>" style="margin-right:5px" class="btn btn-success btn-sm mt10">Pesan Tiket</a></td>
 						</tr>
 
 
 					<?php  } ?>
 				</table>
-				<a href="index.php?prib" style="margin-right:5px" class="btn btn-primary btn-sm mt10">Pesan Tiket</a>
+				<!-- <a href="index.php?prib" style="margin-right:5px" class="btn btn-primary btn-sm mt10">Pesan Tiket</a> -->
 			</div>
 		</div>
 

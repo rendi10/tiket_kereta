@@ -242,6 +242,12 @@ class model
 		return $rows['id_user'];
 	}
 
+	function selectTransaksi($id_jadwal)
+	{
+		$query = "select * from tbl_jadwal where id_jadwal='$id_jadwal'";
+		return $this->execute($query);
+	}
+
 	function insertTransaksi($id_jadwal, $id_penumpang, $tanggal_berangkat)
 	{
 
