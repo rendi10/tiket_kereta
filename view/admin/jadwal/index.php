@@ -13,6 +13,7 @@
             } else if (isset($_GET['u'])) {
                 $id_jadwal = $_GET['u'];
                 $main->viewEditJadwal($id_jadwal);
+               
             } else if (isset($_GET['d'])) {
                 $id_jadwal = $_GET['d'];
                 $main->hapusJadwalControl($id_jadwal);

@@ -48,7 +48,7 @@ class jadwalControl
         include "edit_jadwal.php";
     }
 
-    function updateJadwalControl()
+    function updateJadwalControl($id_jadwal)
     {
         $id_jadwal = $_POST['id_jadwal'];
         $id_kereta = $_POST['id_kereta'];

@@ -13,7 +13,7 @@ include '../template/sidebar.php';
                     <span class="fa fa-table"></span>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="post">
+                    <form class="form-horizontal" method="post" action="">
 
 
                         <div class="form-group">
@@ -57,9 +57,9 @@ include '../template/sidebar.php';
             </div>
         </div>
         <?php
-        if (isset($_POST['update'])) {
-            $main = new jadwalControl();
-            $main->updateJadwalControl();
+         if (isset($_POST['update'])) {
+             $main = new jadwalControl();
+            $main->updateJadwalControl($id_jadwal);
 
             echo '<script language="javascript">
                         alert ("Berhasil");

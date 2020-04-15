@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])) {
     <div id="main">
         <header class="navbar navbar-fixed-top bg-system">
             <div class="navbar-branding dark">
-                <a class="navbar-brand" href="dashboard.html">
+                <a class="navbar-brand" href="index.php">
                     <b>TIKET</b>kereta
                 </a>
             </div>
@@ -90,7 +90,13 @@ if (!isset($_SESSION['username'])) {
         </aside>
         <!-- End: Sidebar Left -->
 
-
+         <!-- Start: Content-Wrapper -->
+         <section id="content_wrapper">
+            <!-- Begin: Content -->
+            <section id="content" class="animated fadeIn">
+            Welcome <?php echo $username = $_SESSION['username'];?>
+            </section>
+        </section>
 
 
         <!-- BEGIN: PAGE SCRIPTS -->
