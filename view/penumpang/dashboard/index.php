@@ -34,8 +34,7 @@ if (!isset($_SESSION['username'])) {
 
             ?>
          
-           
-     
+             
 <?php
 include '../template/footer.php';
 ?>
