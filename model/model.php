@@ -5,7 +5,7 @@ class model
 	var $host = "localhost";
 	var $username = "root";
 	var $password = "";
-	var $database = "uts";
+	var $database = "tiket_kereta";
 	var $koneksi = "";
 
 	function __construct()
