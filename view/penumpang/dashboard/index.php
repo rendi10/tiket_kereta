@@ -28,14 +28,9 @@ if (!isset($_SESSION['username'])) {
                         window.location="index.php";
                         </script>';
                 }
-                // }else if(isset($_GET['other'])){
-                //     include 'pesanLagi.php';
-
-
             } else {
                 $main->viewSelect();
             }
-
 
             ?>
          
