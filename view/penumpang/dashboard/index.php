@@ -5,12 +5,10 @@ include '../template/sidebar.php';
 
 // mengaktifkan session php
 session_start();
-if(!isset($_SESSION['username'])) {
-   header('location: ../../index.php'); 
-} else { 
-   $username = $_SESSION['username']; 
-   
-
+if (!isset($_SESSION['username'])) {
+    header('location: ../../index.php');
+} else {
+    $username = $_SESSION['username'];
 }
 
 
@@ -20,9 +18,9 @@ if(!isset($_SESSION['username'])) {
            <?php
             include '../../../controller/transaksiControl.php';
             $main = new transaksiControl();
-            
+
             if (isset($_GET['prib'])) {
-                
+
                 include 'transaksi.php';
 
                 if (isset($_POST['kirim'])) {
@@ -31,30 +29,13 @@ if(!isset($_SESSION['username'])) {
                         alert ("Berhasil");
                         window.location="index.php";
                         </script>';
-                } 
-            // }else if(isset($_GET['other'])){
-            //     include 'pesanLagi.php';
-                
+                }
+                // }else if(isset($_GET['other'])){
+                //     include 'pesanLagi.php';
+
 
             } else {
                 $main->viewSelect();
-
-                echo '<section id="content_wrapper">
-                <section id="content" class="animated fadeIn">
-                            <table cellspacing="0" cellpadding="0" width="600" class="w320" >
-                            
-                            <tr>
-                                <td class="button">
-                                <div><a  href="index.php?prib" style="margin-right:5px" class="btn btn-primary btn-sm">Pesan Tiket</a>
-                                </div>
-                                </td>
-                            </tr>
-                            <tr>
-                            
-                        </tr>
-                            </table>
-                        </section>
-                    </section>';
             }
 
 

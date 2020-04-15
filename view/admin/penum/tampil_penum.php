@@ -6,18 +6,13 @@ $no = 1;
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
         <div class="col-sm-3">
-            <div class="panel">
-
-                <!-- <div class="panel-heading mt10">
-                <span class="panel-title">Jadwal Keberangkatan</span>
-                <span class="fa fa-table"></span>
-            </div> -->
-                <div class="panel-body">
+            <div class="panel" id="spy2">
+                <div class="panel-heading">
                     <span class="panel-title">
-                        <b>Daftar Penumpang<b>
-                    </span> <span class="fa fa-user">
-                    </span>
-                    <ul class="list-group mt25">
+                        <span class="glyphicon glyphicon-user"></span>Penumpang</span>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group mt10">
                         <?php foreach ($data as $penum) : ?>
 
                             <li class="list-group-item">

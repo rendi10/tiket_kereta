@@ -6,13 +6,13 @@ include '../template/sidebar.php';
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
         <div class="col-sm-3">
-            <div class="panel">
-                <div class="panel-body">
+            <div class="panel" id="spy2">
+                <div class="panel-heading">
                     <span class="panel-title">
-                        <b>Daftar Penumpang<b>
-                    </span> <span class="fa fa-user">
-                    </span>
-                    <div class="card mt25" style="width: 18rem;">
+                        <span class="glyphicon glyphicon-pencil"></span>Detail Penumpang</span>
+                </div>
+                <div class="panel-body">
+                    <div class="card mt10" style="width: 30rem;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><?= $row['nama_penumpang']; ?></li>
                             <li class="list-group-item"><?= $row['jk']; ?></li>
@@ -24,6 +24,7 @@ include '../template/sidebar.php';
                     </div>
                 </div>
             </div>
-            <?php
-            include '../template/footer.php';
-            ?>
+        </div>
+        <?php
+        include '../template/footer.php';
+        ?>

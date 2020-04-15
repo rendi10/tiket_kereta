@@ -6,11 +6,11 @@ include '../template/sidebar.php';
 
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
-        <div class="panel">
-            <div class="col-sm-8">
+        <div class="col-sm-6">
+            <div class="panel" id="spy2">
                 <div class="panel-heading">
-                    <span class="panel-title">Tambah Jadwal Keberangkatan</span>
-                    <span class="fa fa-table"></span>
+                    <span class="panel-title">
+                        <span class="fa fa-table"></span>Jadwal Keberangkatan</span>
                 </div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="post">

@@ -5,17 +5,12 @@ include '../template/sidebar.php';
 ?>
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
-        <div class="panel">
-
-            <!-- <div class="panel-heading mt10">
-                <span class="panel-title">Jadwal Keberangkatan</span>
-                <span class="fa fa-table"></span>
-            </div> -->
-            <div class="panel-body">
+        <div class="panel" id="spy2">
+            <div class="panel-heading">
                 <span class="panel-title">
-                    <b>Jadwal Keberangkatan<b>
-                </span> <span class="fa fa-table">
-                </span>
+                    <span class="glyphicon glyphicon-time"></span>Jadwal Keberangkatan</span>
+            </div>
+            <div class="panel-body">
                 <table class="table table-bordered mt15">
                     <thead>
                         <tr>

@@ -1,12 +1,10 @@
 <?php
 // mengaktifkan session php
 session_start();
-if(!isset($_SESSION['username'])) {
-   header('location: ../../index.php'); 
-} else { 
-   $username = $_SESSION['username']; 
-   
-
+if (!isset($_SESSION['username'])) {
+    header('location: ../../index.php');
+} else {
+    $username = $_SESSION['username'];
 }
 
 ?>
@@ -44,32 +42,26 @@ if(!isset($_SESSION['username'])) {
 
 <body class="dashboard-page sb-l-o sb-r-c">
     <div id="main">
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-branding">
-        <a class="navbar-brand" href="index.php">
-          <b>Penumpang</b>Designs
-        </a>
-        <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
-      </div>
+        <header class="navbar navbar-fixed-top bg-danger">
+            <div class="navbar-branding">
+                <a class="navbar-brand" href="index.php">
+                    <b>Tiket</b>kereta
+                </a>
+                <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
+            </div>
 
-      <form class="navbar-form navbar-left navbar-search" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search..." value="Search...">
-        </div>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-         
-            <li class="dropdown-footer">
-              <a href="logout.php" class="">
-              <span class="fa fa-power-off pr5"></span> Logout </a>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown-footer">
+                    <a href="logout.php" class="">
+                        <span class="fa fa-power-off pr5"></span> Logout </a>
+                </li>
+            </ul>
             </li>
-          </ul>
-        </li>
-      </ul>
+            </ul>
 
-    </header>
+        </header>
         <!-- Start: Sidebar Left -->
-        <aside id="sidebar_left" class="nano nano-primary affix">
+        <aside id="sidebar_left" class="nano nano-primary affix sidebar-light">
             <div class="sidebar-left-content nano-content">
                 <!-- Start: Sidebar Left Menu -->
                 <ul class="nav sidebar-menu">
@@ -79,25 +71,25 @@ if(!isset($_SESSION['username'])) {
                             <span class="glyphicon glyphicon-home"></span>
                             <span class="sidebar-title">Dashboard</span>
                         </a>
-                       
+
                     </li>
                     <li>
                         <a href="profil/index.php">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="sidebar-title">Profil</span>
                         </a>
-                       
+
                     </li>
                     <li>
                         <a href="riwayat/index.php">
-                            <span class="glyphicon glyphicon-book"></span>
+                            <span class="glyphicon glyphicon-hourglass"></span>
                             <span class="sidebar-title">Riwayat</span>
                         </a>
-                       
+
                     </li>
                 </ul>
 
-                
+
             </div>
         </aside>
         <!-- End: Sidebar Left -->
@@ -106,7 +98,7 @@ if(!isset($_SESSION['username'])) {
         <section id="content_wrapper">
             <!-- Begin: Content -->
             <section id="content" class="animated fadeIn">
-            Welcome <?php echo $username = $_SESSION['username'];?>
+                <h1>Selamat Datang <?php echo $username = $_SESSION['username']; ?>!</h1>
             </section>
         </section>
     </div>

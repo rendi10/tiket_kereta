@@ -15,7 +15,7 @@ include '../template/sidebar.php';
                 <div class="panel-body">
                     <span class="panel-title">
                         <b>Data Kereta<b>
-                    </span> <span class="fa fa-table">
+                    </span> <span class="glyphicon glyphicon-bed">
                     </span>
                     <table class="table table-bordered mt15">
                         <thead>

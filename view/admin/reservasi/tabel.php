@@ -5,14 +5,12 @@ include '../template/sidebar.php';
 ?>
 <section id="content_wrapper">
     <section id="content" class="animated fadeIn">
-        <div class="panel">
-
-           
-            <div class="panel-body">
+        <div class="panel" id="spy2">
+            <div class="panel-heading">
                 <span class="panel-title">
-                    <b>Data Transaksi<b>
-                </span> <span class="fa fa-table">
-                </span>
+                    <span class="glyphicon glyphicon-list-alt"></span>Data Reservasi</span>
+            </div>
+            <div class="panel-body">
                 <table class="table table-bordered mt15">
                     <thead>
                         <tr>
@@ -32,13 +30,13 @@ include '../template/sidebar.php';
                             <td><?php print $row['nama_penumpang']; ?></td>
                             <td><?php print $row['jk']; ?></td>
                             <td><?php print $row['ttl']; ?></td>
-                            
+
                         </tr>
                     <?php  } ?>
 
                     </tbody>
                 </table>
-                
+
             </div>
         </div>
         <?php
